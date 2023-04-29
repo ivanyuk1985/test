@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('GIT') {
             steps {
-            git branch: 'main', url: 'https://github.com/NazarServer322/ItStep.git'
+            git branch: 'main', url: 'https://github.com/ivanyuk1985/test'
             }
         }
         stage('READ') {
