@@ -1,15 +1,5 @@
 pipeline {
     agent any
-    environment {
-		buildNumber       = "${env.BUILD_NUMBER}"
-		workspace         = "${env.WORKSPACE}"
-		jobName           = "${env.JOB_NAME}"
-		Name              = "Nazar"
-	}
-       parameters {
-  choice choices: ['Nazar','SashaH','SashaI','Vlad','Maks','Vasyl','Andry','SashaONlineGuys'], name: 'Names'
-
-}
 
     stages {
         stage('GIT') {
@@ -17,12 +7,12 @@ pipeline {
             git branch: 'main', url: 'https://github.com/ivanyuk1985/test'
             }
         }
-        stage('READ') {
+        stage('Apache') {
          steps{
-			dir("$workspace"){
-				sh 'bash Bash.sh $Names'
+				sh 'bash apache.sh'
+				
 			}
 		}
-        }
+	 
     }
 }
