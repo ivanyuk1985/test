@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Apache') {
          steps{
-				sh 'bash apache.sh'
+				sh 'pwd'
 				
 			}
 		}
